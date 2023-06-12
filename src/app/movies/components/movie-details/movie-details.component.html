@@ -1,0 +1,33 @@
+<div class="details-container" *ngIf="movieDetails$ | async as details">
+  <div class="movie-details">
+    <img class="poster" src="./assets/images/film_4.jpg" alt="Affiche du film">
+    <div class="info">
+      <h1 class="movie-title">{{details.Title}}</h1>
+      <p class="genre" *ngIf="details.MajorGenre">
+        {{details.MajorGenre}} - {{details.CreativeType}}
+      </p>
+      <p *ngIf="details.Director">
+        <i class="fas fa-user"></i>
+        {{details.Director}}
+      </p>
+
+      <p *ngIf="details.Distributor">
+        <i class="fas fa-building"></i>
+        {{details.Distributor}}
+      </p>
+
+      <p class="release-date" *ngIf="details.ReleaseDate">
+        <i class="fas fa-calendar-days me-2 mb-3"></i>
+        <b>{{details.ReleaseDate | date: 'dd/MM/YYYY'}}</b>
+      </p>
+
+      <p class="vote" *ngIf="details.IMDBVotes">
+        <i class="fas fa-thumbs-up me-2"></i>
+        <b>{{details.IMDBVotes}}</b>
+      </p>
+      <p>
+        <app-rating [rateValue]="details.IMDBRating || 0" [maxStars]="8"></app-rating>
+      </p>
+    </div>
+  </div>
+</div>

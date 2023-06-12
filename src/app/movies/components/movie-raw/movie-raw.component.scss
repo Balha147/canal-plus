@@ -1,0 +1,52 @@
+@import '../../../../scss/variable';
+.movie-card {
+  width: 300px;
+  background-color: $bleu_dark;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px $noir;
+  position: relative;
+
+  .card-content {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      i {
+        font-size: 48px;
+        color: $blanc;
+        cursor: pointer;
+      }
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+    }
+  }
+
+  .movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: $blanc;
+  }
+
+  .movie-description {
+    font-size: 14px;
+    color: $blanc;
+  }
+}

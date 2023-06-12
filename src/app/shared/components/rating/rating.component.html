@@ -1,0 +1,6 @@
+<ngb-rating [(rate)]="rateValue" [starTemplate]="heart" [readonly]="true" [max]="maxStars"></ngb-rating>
+<ng-template #heart let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+  </span>
+</ng-template>

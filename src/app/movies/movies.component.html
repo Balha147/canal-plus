@@ -1,0 +1,22 @@
+<div class="container">
+    <app-search-movie (dataMoviesEmmiter)="getMoviesSearched($event)"></app-search-movie>
+
+    <app-loader [isLoading]="isLoading"></app-loader>
+
+    <div class="content">
+        <div class="movie-list" *ngIf="(movies$ | async) as movies">
+            <ng-container *ngIf="!isLoading && movies && movies.length > 0; else noMovies">
+                <ng-container *ngFor="let movie of movies| paginate: { itemsPerPage: 6, currentPage: currentPage };">
+                    <app-movie-raw [moviesData]="movie" ></app-movie-raw>
+                </ng-container>
+                <div class="d-flex justify-content-center align-items-center pagination-container mt-5">
+                  <pagination-controls (pageChange)="currentPage = $event" class="float-right"></pagination-controls>
+              </div>
+            </ng-container>
+        </div>
+        <ng-template #noMovies>
+            <p class="d-flex justify-content-center no-movies-message">OOPS!!! Aucun film disponible</p>
+        </ng-template>
+    </div>
+</div>
+

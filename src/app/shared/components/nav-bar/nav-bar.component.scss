@@ -1,0 +1,11 @@
+@import '../../../../scss/variable';
+
+.bg-navbar {
+  background-color: $bleu_dark;
+  color: $blanc;
+  cursor: pointer;
+}
+.link-color {
+  color: $blanc;
+  text-decoration: none;
+}

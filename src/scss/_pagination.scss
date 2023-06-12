@@ -1,0 +1,105 @@
+
+@import './variable';
+
+
+// Pagination links
+.pagination-container .ngx-pagination li {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid $gris;
+  border-radius: 20px;
+  cursor: pointer;
+  color: $noir;
+  position: relative; // Ajout de la position relative
+}
+
+.pagination-container .ngx-pagination li.active {
+  background-color: $noir;
+  color: $blanc;
+}
+
+// Pagination navigation arrows
+.pagination-container .ngx-pagination li.previous,
+.pagination-container .ngx-pagination li.next {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $gris;
+  cursor: pointer;
+  color: $bleu_dark;
+  background-color: transparent;
+}
+
+.pagination-container .ngx-pagination li.previous:before,
+.pagination-container .ngx-pagination li.next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+}
+
+
+// Pagination information
+.pagination-container .ngx-pagination li.pagination-info {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+// Pagination page size dropdown
+.pagination-container .ngx-pagination select {
+  padding: 5px;
+  border-radius: 3px;
+}
+
+// Exemple de modification de couleur pour les boutons de pagination
+
+// Couleur de fond des boutons de pagination
+.pagination-container .ngx-pagination li {
+  background-color: $blanc;
+}
+
+// Couleur du texte des boutons de pagination
+.pagination-container .ngx-pagination li {
+  color: $bleu_dark;
+}
+
+// Couleur de fond des boutons de pagination actifs
+.pagination-container .ngx-pagination li.active {
+  background-color: $bleu_dark;
+}
+
+// Couleur du texte des boutons de pagination actifs
+.pagination-container .ngx-pagination li.active {
+  color: $blanc;
+}
+
+// Hover sur les items
+.pagination-container .ngx-pagination li:hover {
+  background-color: $bleu_dark;
+  color: $blanc;
+}
+
+// Ajustement du style du hover pour les items arrondis
+.pagination-container .ngx-pagination li:hover::before {
+  color: $blanc;
+}
+
+// Couvrir toute la div ronde avec la couleur de hover
+.pagination-container .ngx-pagination li:hover::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 20px;
+  background-color: $bleu_dark;
+  z-index: -1;
+}
+.ngx-pagination a:hover {
+  background-color: transparent !important;
+}

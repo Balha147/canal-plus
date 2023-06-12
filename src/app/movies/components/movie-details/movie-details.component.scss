@@ -1,0 +1,47 @@
+@import '../../../../scss/variable';
+
+.details-container {
+  max-width: 800px;
+  margin: 160px auto;
+  padding: 20px;
+}
+.movie-details {
+  display: flex;
+  align-items: center;
+  background-color: $blanc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px $noir;
+}
+
+.poster {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px $noir;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.movie-title {
+  font-size: 44px;
+  margin-bottom: 10px;
+  color: $bleu_dark;
+  font-weight: bold;
+}
+
+.genre,
+.release-date,
+.vote,
+.directeur {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: $bleu_dark;
+}
+
+i {
+  color: $bleu_dark;
+}

@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+  <div class=" d-flex justify-content-between mb-5 mt-5 search-bar ">
+        <div class="input-group me-2">
+          <input type="text" class="form-control" placeholder="Rechercher..." formControlName="searchQuery"/>
+        </div>
+
+        <select class="form-select me-2" formControlName="sortBy">
+          <option *ngFor="let item of sortItems" value="{{item.value}}">{{item.label}}</option>
+        </select>
+        <button (click)="onSearchMovies()">Chercher</button>
+  </div>
+</form>

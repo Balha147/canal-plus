@@ -1,0 +1,23 @@
+<div class="sign section--full-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sign__content  d-flex flex-column justify-content-center align-items-center">
+          <form [formGroup]="form" class="sign__form" (ngSubmit)="onSubmit()">
+            <a class="sign__logo">
+              <img src="./assets/images/logo_canal_plus.svg" class="mb-4"/>
+            </a>
+            <div class="sign__group">
+              <input type="text" class="sign__input" placeholder="username" formControlName="username">
+            </div>
+            <div class="sign__group">
+              <input type="password" class="sign__input" placeholder="password" formControlName="password">
+            </div>
+            <button type="submit" class="sign__btn">Connexion</button>
+            <div class="errorMessage" *ngIf="errorMessage"> {{ errorMessage }}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

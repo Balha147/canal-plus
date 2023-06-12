@@ -1,0 +1,31 @@
+@import '../../../../scss/variable';
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: $bleu_dark;
+  border-radius: 16px;
+  padding: 20px 30px;
+
+  input {
+    flex: 1;
+    border-radius: 16px;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    color: $noir;
+    background-color: $blanc;
+
+  }
+  select {
+    border-radius: 16px;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $blanc;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="movie-card" *ngIf="moviesData">
+  <div class="card-content">
+    <img [src]="moviesData.image" alt="Movie">
+    <div class="overlay">
+      <i class="fas fa-eye" (click)="navigateTo(moviesData)"></i>
+
+    </div>
+  </div>
+  <h3 class="movie-title">{{moviesData.Title}} <span *ngIf="moviesData.MajorGenre">-</span> {{moviesData.MajorGenre}}</h3>
+  <div class="d-flex flex-column movie-description">
+    <div *ngIf="moviesData.Director">
+      <i class="fas fa-user me-2"></i>
+      <b>{{moviesData.Director}}</b>
+    </div>
+
+    <app-rating [rateValue]="moviesData.IMDBRating || 0" [maxStars]="8"></app-rating>
+
+    <div *ngIf="moviesData.ReleaseDate">
+      <i class="fas fa-calendar-days me-2 mb-3"></i>
+      <b>{{moviesData.ReleaseDate | date: 'dd/MM/YYYY'}}</b>
+    </div>
+
+    <div *ngIf="moviesData.IMDBVotes">
+      <i class="fas fa-thumbs-up me-2"></i>
+      <b>{{moviesData.IMDBVotes}}</b>
+    </div>
+  </div>
+</div>
+
